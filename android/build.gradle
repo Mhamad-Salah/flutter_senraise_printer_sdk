@@ -8,7 +8,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.1.2'
+        classpath 'com.android.tools.build:gradle:8.1.4'
     }
 }
 
@@ -22,7 +22,9 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 31
+    compileSdk 34
+
+    buildFeatures.aidl = true
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -31,5 +33,12 @@ android {
 
     defaultConfig {
         minSdkVersion 16
+        namespace 'com.senraise.senraise_printer' // Added namespace
+    }
+
+    sourceSets {
+        main {
+            aidl.srcDirs = ['src/main/aidl']
+        }
     }
 }
