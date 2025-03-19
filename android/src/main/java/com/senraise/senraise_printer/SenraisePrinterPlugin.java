@@ -109,7 +109,8 @@ public class SenraisePrinterPlugin implements FlutterPlugin, MethodCallHandler {
                 result.notImplemented();
             }
         } catch (Exception e) {
-            Log.e("ghghghuuuu",e.getMessage());
+            Log.e("Failed to print",e.getMessage());
+            result.error("Failed to print", e.getMessage(), null);
         }
     }
 
